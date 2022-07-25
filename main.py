@@ -3,6 +3,20 @@
 # Import Random 'Tools' to use
 import random
 
+# Roll Function
+
+
+def roll_dice():
+    # Roll a Dice
+    randNum1 = random.randrange(1, 7)
+    randNum2 = random.randrange(1, 7)
+    sum = randNum1 + randNum2
+
+    print(str(randNum1) + "," + str(randNum2) + " (sum: " + str(sum) + ")")
+
+    return sum
+
+
 # Main Program Loop
 loop = True
 while loop:
@@ -39,24 +53,13 @@ while loop:
         roll = True
         n = 0
         while roll:
-            roll_dice()
+            sum = roll_dice()
             n += 1
             if sum == 2:
-                roll = false
-                print("SNAKE EYES! It took " + n + " rolls to get snake eyes")
+                roll = False
+                print("SNAKE EYES! It took " + str(n) +
+                      " rolls to get snake eyes")
 
     elif selection == "5":
         print("\nEXIT")
         loop = False
-
-
-def roll_dice():
-    # Roll a Dice
-    randNum1 = random.randrange(1, 7)
-    randNum2 = random.randrange(1, 7)
-    sum = randNum1 + randNum2
-
-    print(str(randNum1) + "," + str(randNum2) + " (sum: " + str(sum) + ")")
-
-
-roll_dice()
