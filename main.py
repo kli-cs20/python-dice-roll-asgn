@@ -19,12 +19,33 @@ while loop:
 
     # Take Action Based on Menu Selection
     if selection == "1":
-        print("\nOption 1")
+        # Roll Once
+        roll_dice()
     elif selection == "2":
-        print("\nOption 2")
+        # Roll Five Times
+        n = 1
+        while n <= 5:
+            roll_dice()
+            n += 1
     elif selection == "3":
-        print("\nOption 3")
+        # Roll n times
+        n = 1
+        num_rolls = int(input("How many rolls would you like? "))
+        while n <= num_rolls:
+            roll_dice()
+            n += 1
     elif selection == "4":
+        # Roll Dice until Snake Eyes
+        roll = True
+        n = 0
+        while roll:
+            roll_dice()
+            n += 1
+            if sum == 2:
+                roll = false
+                print("SNAKE EYES! It took " + n + " rolls to get snake eyes")
+
+    elif selection == "5":
         print("\nEXIT")
         loop = False
 
